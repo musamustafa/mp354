@@ -1,25 +1,21 @@
 # -*- coding: utf-8 -*-
 """
-Spyder Editor
-
-This is a temporary script file.
+Musa Abdin Submission for MP354 lab test 1d
 """
 import numpy as np
 import matplotlib.pyplot as plt
 
-
-delta = 0.001
-
-x = np.arange(-1, 2.5, delta)
+# define the step size
+delta = 0.01
 
 
-
-f = np.tanh(x)*((1-(x/2)**2))**4
-c = np.cos(x)
-
-# Calculate the forward derviative in array (faster)
+x = np.arange(-1,2.5, delta)
 
 
+# function to be differentiated
+f = ((1 - ((x/2)**2))**4) * (np.tanh(x/2))
+
+# defninition of a function to calculate the dtd derivative
 def dfs(f, x):
     dfs = np.zeros(len(x)-2)
     for i in range(1,len(x)-1):
@@ -38,4 +34,5 @@ plt.xlabel('x')
 plt.ylabel('y')
 plt.title('lab test 1d Musa abdin ')
 plt.grid()
+#plt.savefig("Musa_lab_test_1d.jpg")
 plt.show()
